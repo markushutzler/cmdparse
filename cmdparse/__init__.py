@@ -30,6 +30,8 @@
 import sys
 import argparse
 
+__version__ = '0.1'
+
 
 class Command(object):
     """Argument Parser Command class."""
@@ -173,8 +175,8 @@ class ArgumentParser(argparse.ArgumentParser):
 
         cmd._add_arguments_cls(self)
 
-        args =  argparse.ArgumentParser.parse_args(self, args=args,
-                                                   namespace=namespace)
+        args = argparse.ArgumentParser.parse_args(self, args=args,
+                                                  namespace=namespace)
         setattr(args, "command", cmd)
         return args
 
