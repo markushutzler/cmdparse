@@ -51,15 +51,23 @@ test command called
 XXX
 ```
 
+## Installation
+
+* Clone cmdparse from github.org
+  git clone `https://github.com/markushutzler/cmdparse.git`
+* Install cmdparse
+  `cd cmdparse`
+  `python setup.py install`
+
+cmdparse doesn't need to be installed if statically used in a project.
+
 ## Python Requirements
 
-* Tested on Python 2.7
+* Tested on Python 2.7 and 3.5
 
 ## ToDo
 
-* Python 3 support
 * `help` command with man support
-* Add setup.py
 * Add unit tests
 
 ## License
