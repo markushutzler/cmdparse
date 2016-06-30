@@ -64,5 +64,5 @@ XXX
 
 ## License
 
-comparse is released under the BSD-3 license. See [COPYING](./COPYING) for
+comparse is released under the BSD-3 license. See [LICENSE](./LICENSE) for
 more information.
