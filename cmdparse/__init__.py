@@ -82,9 +82,13 @@ class ArgumentParser(argparse.ArgumentParser):
 
     def format_usage(self):
         """Overwrites original format_usage and injects the command."""
+        if not self.commands:
+            return super(ArgumentParser, self).format_usage()
         prog = self.prog
         if self.selected_command_key:
             self.prog = prog + " " + self.selected_command_key
+        else:
+            self.prog = prog + " command"
         usage = super(ArgumentParser, self).format_usage()
         self.prog = prog
         return usage
@@ -94,11 +98,15 @@ class ArgumentParser(argparse.ArgumentParser):
 
         Args:
             show_cmd (`bool`): Add list of commands to help message."""
+        if not self.commands:
+            return super(ArgumentParser, self).format_help()
         description = self.description
         self.description = "{% usage-replace %}"
         prog = self.prog
         if self.selected_command_key:
             self.prog = prog + " " + self.selected_command_key
+        else:
+            self.prog = prog + " command"
         text = super(ArgumentParser, self).format_help()
         self.prog = prog
         self.description = description
